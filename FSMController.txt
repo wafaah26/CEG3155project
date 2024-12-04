@@ -1,0 +1,119 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity FSMController is
+ Port (
+    clk, reset: in std_logic;
+    SSCS, CEXP: in std_logic;
+    MSTL,SSTL: out std_logic_vector(2 downto 0);
+    SELC: out std_logic_vector(1 downto 0);
+    LOADC, ENC: out std_logic;
+ );
+end FSMController;
+
+architecture struct of FSMController is
+    TYPE state_type is (A,B,D,E,F,G,H,I);
+    signal presentState, nextState: state_type;
+begin
+    -- process for updating next state
+    process(presentState, SSCS, CEXP)
+    begin  
+        case presentState is
+            when A =>
+                if CEXP = '0' then
+                    nextState <= B;
+                end if;
+            when B =>
+                if CEXP = '0' then
+                    nextState <= B;
+                elsif SSCS = '0' and CEXP = '1' then
+                    nextState <= B;
+                elsif SSCS = '1' and CEXP = '1' then
+                    nextState <= D;
+                end if;
+            when D =>
+                if CEXP = '0' then
+                    nextState <= E;
+                end if;
+            when E =>
+                if CEXP = '0' then
+                    nextState <= E;
+                elsif CEXP = '1' then
+                    nextState <= F;
+                end if;
+            when F =>
+                if CEXP = '0' then
+                    nextState <= G;
+                end if;
+            when G =>
+                if CEXP = '0' then
+                    nextState <= G;
+                elsif CEXP = '1' then
+                    nextStage <= H;
+                end if;
+            when H =>
+                if CEXP = '0' then
+                    nextState <= I;
+                end if;
+            when I =>
+                if CEXP = '0' then
+                    nextState <= I;
+                elsif CEXP = '1' then
+                    nextState <= A;
+                end if;
+        end case;
+    end process;
+
+    -- process to maintain present state
+    process(clk, reset)
+    begin
+        if (reset) then
+            presentState <= A;
+        elsif (clk_event and clk = '1') then
+            presentState <= nextState;
+        end if;
+    end process;
+
+    -- process to update system outputs
+    process(presentState)
+    begin
+        case presentState is
+            when A =>
+                MSTL <= "001"
+                SSTL <= "100"
+                SELC <= "11"
+                LOADC <= 1
+            when B =>
+                MSTL <= "001"
+                SSTL <= "100"
+                ENC <= 1
+            when D =>
+                MSTL <= "010"
+                SSTL <= "100"
+                SELC <= 
+                LOADC <= 1
+            when E =>
+                MSTL <= "010"
+                SSTL <= "100"
+                ENC <= 1
+            when F =>
+                MSTL <= "100"
+                SSTL <= "001"
+                SELC <=
+                LOADC <= 1
+            when G =>
+                MSTL <= "100"
+                SSTL <= "001"
+                ENC <= 1
+            when H =>
+                MSTL <= "100"
+                SSTL <= "010"
+                SELC <=
+                LOADC <= 1
+            when I =>
+                MSTL <= "100"
+                SSTL <= "010"
+                ENC <= 1
+    
+
+end ;

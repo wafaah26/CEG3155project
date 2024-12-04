@@ -1,0 +1,1292 @@
+TimeQuest Timing Analyzer report for lab3junktrunk
+Wed Nov 06 19:34:19 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'GClock'
+ 13. Slow 1200mV 85C Model Hold: 'GClock'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'GClock'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'GClock'
+ 27. Slow 1200mV 0C Model Hold: 'GClock'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'GClock'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'GClock'
+ 40. Fast 1200mV 0C Model Hold: 'GClock'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'GClock'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 55. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 56. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 57. Setup Transfers
+ 58. Hold Transfers
+ 59. Report TCCS
+ 60. Report RSKM
+ 61. Unconstrained Paths
+ 62. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; lab3junktrunk                                                     ;
+; Device Family      ; Cyclone IV E                                                      ;
+; Device Name        ; EP4CE115F29C7                                                     ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Enabled                                                           ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; GClock     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { GClock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 332.78 MHz ; 250.0 MHz       ; GClock     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++--------+--------+-------------------+
+; Clock  ; Slack  ; End Point TNS     ;
++--------+--------+-------------------+
+; GClock ; -2.005 ; -11.219           ;
++--------+--------+-------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++--------+-------+-------------------+
+; Clock  ; Slack ; End Point TNS     ;
++--------+-------+-------------------+
+; GClock ; 0.402 ; 0.000             ;
++--------+-------+-------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++--------+--------+---------------------------------+
+; Clock  ; Slack  ; End Point TNS                   ;
++--------+--------+---------------------------------+
+; GClock ; -3.000 ; -11.995                         ;
++--------+--------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'GClock'                                                                                                                                      ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.005 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.081     ; 2.922      ;
+; -2.002 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.081     ; 2.919      ;
+; -1.868 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.362      ; 3.228      ;
+; -1.861 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.081     ; 2.778      ;
+; -1.860 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.081     ; 2.777      ;
+; -1.820 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.542     ; 2.276      ;
+; -1.777 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.081     ; 2.694      ;
+; -1.776 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.081     ; 2.693      ;
+; -1.750 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.362      ; 3.110      ;
+; -1.710 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; -0.099     ; 2.609      ;
+; -1.666 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.362      ; 3.026      ;
+; -1.611 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.081     ; 2.528      ;
+; -1.610 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.081     ; 2.527      ;
+; -1.500 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.362      ; 2.860      ;
+; -1.436 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.080     ; 2.354      ;
+; -1.435 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.080     ; 2.353      ;
+; -1.419 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.542     ; 1.875      ;
+; -1.417 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.542     ; 1.873      ;
+; -1.325 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.363      ; 2.686      ;
+; -1.254 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.543     ; 1.709      ;
+; -1.254 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.543     ; 1.709      ;
+; -1.138 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.080     ; 2.056      ;
+; -1.028 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.363      ; 2.389      ;
+; -0.998 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 1.915      ;
+; -0.996 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 1.913      ;
+; -0.986 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.542     ; 1.442      ;
+; -0.896 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.080     ; 1.814      ;
+; -0.893 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.080     ; 1.811      ;
+; -0.875 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.082     ; 1.791      ;
+; -0.874 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.082     ; 1.790      ;
+; -0.827 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.082     ; 1.743      ;
+; -0.827 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.082     ; 1.743      ;
+; -0.768 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.080     ; 1.686      ;
+; -0.724 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.080     ; 1.642      ;
+; -0.721 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.080     ; 1.639      ;
+; -0.717 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 1.634      ;
+; -0.708 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.082     ; 1.624      ;
+; -0.707 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.082     ; 1.623      ;
+; -0.679 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 1.596      ;
+; -0.677 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 1.594      ;
+; -0.492 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.082     ; 1.408      ;
+; -0.492 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.082     ; 1.408      ;
+; -0.336 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 1.253      ;
+; -0.197 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 1.114      ;
+; -0.186 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 1.103      ;
+; 0.152  ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 0.765      ;
+; 0.152  ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 0.765      ;
+; 0.152  ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 0.765      ;
+; 0.183  ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.081     ; 0.734      ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'GClock'                                                                                                                                      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.402 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.407 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 0.674      ;
+; 0.533 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.542      ; 1.261      ;
+; 0.668 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 0.935      ;
+; 0.672 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.542      ; 1.400      ;
+; 0.677 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 0.944      ;
+; 0.811 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.543      ; 1.540      ;
+; 0.847 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 1.114      ;
+; 0.874 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.081      ; 1.141      ;
+; 1.028 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.080      ; 1.294      ;
+; 1.028 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.080      ; 1.294      ;
+; 1.108 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.081      ; 1.375      ;
+; 1.185 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 1.452      ;
+; 1.187 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 1.454      ;
+; 1.209 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.080      ; 1.475      ;
+; 1.210 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.080      ; 1.476      ;
+; 1.219 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.082      ; 1.487      ;
+; 1.221 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.082      ; 1.489      ;
+; 1.270 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.080      ; 1.536      ;
+; 1.270 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.080      ; 1.536      ;
+; 1.273 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.082      ; 1.541      ;
+; 1.274 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 1.541      ;
+; 1.312 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.542      ; 2.040      ;
+; 1.343 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.080      ; 1.609      ;
+; 1.344 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.080      ; 1.610      ;
+; 1.358 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.082      ; 1.626      ;
+; 1.360 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.082      ; 1.628      ;
+; 1.378 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.543      ; 2.107      ;
+; 1.423 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.542      ; 2.151      ;
+; 1.447 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 1.714      ;
+; 1.449 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.081      ; 1.716      ;
+; 1.499 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; -0.362     ; 1.323      ;
+; 1.603 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.082      ; 1.871      ;
+; 1.770 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; -0.363     ; 1.593      ;
+; 1.770 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; -0.363     ; 1.593      ;
+; 1.772 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.081      ; 2.039      ;
+; 1.774 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.081      ; 2.041      ;
+; 1.835 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.082      ; 2.103      ;
+; 1.835 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.082      ; 2.103      ;
+; 1.883 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.081      ; 2.150      ;
+; 1.885 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.081      ; 2.152      ;
+; 1.927 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; -0.362     ; 1.751      ;
+; 1.929 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; -0.362     ; 1.753      ;
+; 2.013 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.099      ; 2.298      ;
+; 2.243 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; -0.362     ; 2.067      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'GClock'                                                                            ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                       ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; GClock ; Rise       ; GClock                                       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; 0.334  ; 0.554        ; 0.220          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; 0.334  ; 0.554        ; 0.220          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; 0.334  ; 0.554        ; 0.220          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; 0.334  ; 0.554        ; 0.220          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; 0.334  ; 0.554        ; 0.220          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; 0.334  ; 0.554        ; 0.220          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; 0.334  ; 0.554        ; 0.220          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; 0.394  ; 0.394        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~input|o                               ;
+; 0.408  ; 0.408        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~inputclkctrl|inclk[0]                 ;
+; 0.408  ; 0.408        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~inputclkctrl|outclk                   ;
+; 0.410  ; 0.410        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF0|int_q|clk                 ;
+; 0.410  ; 0.410        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF1|int_q|clk                 ;
+; 0.410  ; 0.410        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF2|int_q|clk                 ;
+; 0.410  ; 0.410        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF0|int_q|clk                    ;
+; 0.410  ; 0.410        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF1|int_q|clk                    ;
+; 0.410  ; 0.410        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF2|int_q|clk                    ;
+; 0.410  ; 0.410        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF3|int_q|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~input|i                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~input|i                               ;
+; 0.590  ; 0.590        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF0|int_q|clk                 ;
+; 0.590  ; 0.590        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF1|int_q|clk                 ;
+; 0.590  ; 0.590        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF2|int_q|clk                 ;
+; 0.590  ; 0.590        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF0|int_q|clk                    ;
+; 0.590  ; 0.590        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF1|int_q|clk                    ;
+; 0.590  ; 0.590        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF2|int_q|clk                    ;
+; 0.590  ; 0.590        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF3|int_q|clk                    ;
+; 0.592  ; 0.592        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~inputclkctrl|inclk[0]                 ;
+; 0.592  ; 0.592        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~inputclkctrl|outclk                   ;
+; 0.606  ; 0.606        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~input|o                               ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MSC[*]    ; GClock     ; 3.617 ; 3.925 ; Rise       ; GClock          ;
+;  MSC[0]   ; GClock     ; 3.326 ; 3.524 ; Rise       ; GClock          ;
+;  MSC[1]   ; GClock     ; 3.135 ; 3.460 ; Rise       ; GClock          ;
+;  MSC[2]   ; GClock     ; 3.617 ; 3.925 ; Rise       ; GClock          ;
+;  MSC[3]   ; GClock     ; 3.536 ; 3.916 ; Rise       ; GClock          ;
+; SSC[*]    ; GClock     ; 3.659 ; 3.874 ; Rise       ; GClock          ;
+;  SSC[0]   ; GClock     ; 3.659 ; 3.874 ; Rise       ; GClock          ;
+;  SSC[1]   ; GClock     ; 2.835 ; 3.187 ; Rise       ; GClock          ;
+;  SSC[2]   ; GClock     ; 3.043 ; 3.364 ; Rise       ; GClock          ;
+;  SSC[3]   ; GClock     ; 3.175 ; 3.529 ; Rise       ; GClock          ;
+; SSCS      ; GClock     ; 1.626 ; 1.996 ; Rise       ; GClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSC[*]    ; GClock     ; -1.640 ; -1.885 ; Rise       ; GClock          ;
+;  MSC[0]   ; GClock     ; -1.640 ; -1.885 ; Rise       ; GClock          ;
+;  MSC[1]   ; GClock     ; -1.945 ; -2.308 ; Rise       ; GClock          ;
+;  MSC[2]   ; GClock     ; -2.325 ; -2.655 ; Rise       ; GClock          ;
+;  MSC[3]   ; GClock     ; -2.238 ; -2.591 ; Rise       ; GClock          ;
+; SSC[*]    ; GClock     ; -1.662 ; -2.040 ; Rise       ; GClock          ;
+;  SSC[0]   ; GClock     ; -1.946 ; -2.210 ; Rise       ; GClock          ;
+;  SSC[1]   ; GClock     ; -1.662 ; -2.040 ; Rise       ; GClock          ;
+;  SSC[2]   ; GClock     ; -1.777 ; -2.111 ; Rise       ; GClock          ;
+;  SSC[3]   ; GClock     ; -1.889 ; -2.212 ; Rise       ; GClock          ;
+; SSCS      ; GClock     ; -1.170 ; -1.517 ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSTL[*]   ; GClock     ; 13.456 ; 13.252 ; Rise       ; GClock          ;
+;  MSTL[0]  ; GClock     ; 12.834 ; 12.990 ; Rise       ; GClock          ;
+;  MSTL[1]  ; GClock     ; 13.456 ; 13.252 ; Rise       ; GClock          ;
+;  MSTL[2]  ; GClock     ; 9.431  ; 9.578  ; Rise       ; GClock          ;
+; SSTL[*]   ; GClock     ; 14.974 ; 14.784 ; Rise       ; GClock          ;
+;  SSTL[0]  ; GClock     ; 14.974 ; 14.784 ; Rise       ; GClock          ;
+;  SSTL[1]  ; GClock     ; 13.608 ; 13.622 ; Rise       ; GClock          ;
+;  SSTL[2]  ; GClock     ; 9.107  ; 8.992  ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSTL[*]   ; GClock     ; 9.102  ; 9.241  ; Rise       ; GClock          ;
+;  MSTL[0]  ; GClock     ; 9.447  ; 9.378  ; Rise       ; GClock          ;
+;  MSTL[1]  ; GClock     ; 10.005 ; 9.677  ; Rise       ; GClock          ;
+;  MSTL[2]  ; GClock     ; 9.102  ; 9.241  ; Rise       ; GClock          ;
+; SSTL[*]   ; GClock     ; 8.786  ; 8.677  ; Rise       ; GClock          ;
+;  SSTL[0]  ; GClock     ; 11.287 ; 11.319 ; Rise       ; GClock          ;
+;  SSTL[1]  ; GClock     ; 10.052 ; 10.151 ; Rise       ; GClock          ;
+;  SSTL[2]  ; GClock     ; 8.786  ; 8.677  ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 366.03 MHz ; 250.0 MHz       ; GClock     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; GClock ; -1.732 ; -9.681           ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; GClock ; 0.354 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; GClock ; -3.000 ; -11.995                        ;
++--------+--------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'GClock'                                                                                                                                       ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.732 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.072     ; 2.659      ;
+; -1.729 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.072     ; 2.656      ;
+; -1.611 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.497     ; 2.113      ;
+; -1.597 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.072     ; 2.524      ;
+; -1.595 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.072     ; 2.522      ;
+; -1.587 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.336      ; 2.922      ;
+; -1.507 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.072     ; 2.434      ;
+; -1.505 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.072     ; 2.432      ;
+; -1.478 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.336      ; 2.813      ;
+; -1.459 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; -0.089     ; 2.369      ;
+; -1.388 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.336      ; 2.723      ;
+; -1.358 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.072     ; 2.285      ;
+; -1.356 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.072     ; 2.283      ;
+; -1.250 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.497     ; 1.752      ;
+; -1.248 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.497     ; 1.750      ;
+; -1.239 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.336      ; 2.574      ;
+; -1.201 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.071     ; 2.129      ;
+; -1.198 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.071     ; 2.126      ;
+; -1.074 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.337      ; 2.410      ;
+; -1.068 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.498     ; 1.569      ;
+; -1.067 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.498     ; 1.568      ;
+; -0.923 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.071     ; 1.851      ;
+; -0.817 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 1.744      ;
+; -0.816 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.497     ; 1.318      ;
+; -0.815 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 1.742      ;
+; -0.806 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.337      ; 2.142      ;
+; -0.697 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.071     ; 1.625      ;
+; -0.695 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.071     ; 1.623      ;
+; -0.675 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.073     ; 1.601      ;
+; -0.674 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.073     ; 1.600      ;
+; -0.639 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.073     ; 1.565      ;
+; -0.638 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.073     ; 1.564      ;
+; -0.589 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.071     ; 1.517      ;
+; -0.582 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 1.509      ;
+; -0.542 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.071     ; 1.470      ;
+; -0.539 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.071     ; 1.467      ;
+; -0.533 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 1.460      ;
+; -0.531 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 1.458      ;
+; -0.525 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.073     ; 1.451      ;
+; -0.524 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.073     ; 1.450      ;
+; -0.351 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.073     ; 1.277      ;
+; -0.350 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.073     ; 1.276      ;
+; -0.192 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 1.119      ;
+; -0.070 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 0.997      ;
+; -0.062 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 0.989      ;
+; 0.244  ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 0.683      ;
+; 0.244  ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 0.683      ;
+; 0.244  ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 0.683      ;
+; 0.268  ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.072     ; 0.659      ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'GClock'                                                                                                                                       ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.354 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.365 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 0.608      ;
+; 0.472 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.497      ; 1.140      ;
+; 0.605 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.497      ; 1.273      ;
+; 0.610 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 0.853      ;
+; 0.619 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 0.862      ;
+; 0.745 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.498      ; 1.414      ;
+; 0.784 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.027      ;
+; 0.809 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.052      ;
+; 0.941 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.071      ; 1.183      ;
+; 0.941 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.071      ; 1.183      ;
+; 0.994 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.237      ;
+; 1.077 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.320      ;
+; 1.079 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.322      ;
+; 1.122 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.071      ; 1.364      ;
+; 1.122 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.071      ; 1.364      ;
+; 1.132 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.073      ; 1.376      ;
+; 1.133 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.073      ; 1.377      ;
+; 1.140 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.383      ;
+; 1.154 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.071      ; 1.396      ;
+; 1.154 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.071      ; 1.396      ;
+; 1.171 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.073      ; 1.415      ;
+; 1.185 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.497      ; 1.853      ;
+; 1.237 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.498      ; 1.906      ;
+; 1.244 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.071      ; 1.486      ;
+; 1.244 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.071      ; 1.486      ;
+; 1.254 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.073      ; 1.498      ;
+; 1.256 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.073      ; 1.500      ;
+; 1.290 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.533      ;
+; 1.292 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.535      ;
+; 1.303 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.497      ; 1.971      ;
+; 1.345 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; -0.336     ; 1.180      ;
+; 1.475 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.073      ; 1.719      ;
+; 1.609 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.852      ;
+; 1.611 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.854      ;
+; 1.619 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; -0.337     ; 1.453      ;
+; 1.619 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; -0.337     ; 1.453      ;
+; 1.642 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.073      ; 1.886      ;
+; 1.642 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.073      ; 1.886      ;
+; 1.727 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.970      ;
+; 1.729 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.072      ; 1.972      ;
+; 1.758 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; -0.336     ; 1.593      ;
+; 1.760 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; -0.336     ; 1.595      ;
+; 1.785 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.089      ; 2.045      ;
+; 2.003 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; -0.336     ; 1.838      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'GClock'                                                                             ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                       ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; GClock ; Rise       ; GClock                                       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; 0.278  ; 0.464        ; 0.186          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; 0.278  ; 0.464        ; 0.186          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; 0.278  ; 0.464        ; 0.186          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; 0.278  ; 0.464        ; 0.186          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; 0.278  ; 0.464        ; 0.186          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; 0.278  ; 0.464        ; 0.186          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; 0.295  ; 0.481        ; 0.186          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; 0.298  ; 0.516        ; 0.218          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; 0.315  ; 0.533        ; 0.218          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; 0.315  ; 0.533        ; 0.218          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; 0.315  ; 0.533        ; 0.218          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; 0.315  ; 0.533        ; 0.218          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; 0.316  ; 0.534        ; 0.218          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; 0.316  ; 0.534        ; 0.218          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; 0.416  ; 0.416        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~input|o                               ;
+; 0.422  ; 0.422        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~inputclkctrl|inclk[0]                 ;
+; 0.422  ; 0.422        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~inputclkctrl|outclk                   ;
+; 0.426  ; 0.426        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF1|int_q|clk                 ;
+; 0.426  ; 0.426        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF2|int_q|clk                 ;
+; 0.426  ; 0.426        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF0|int_q|clk                    ;
+; 0.426  ; 0.426        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF1|int_q|clk                    ;
+; 0.426  ; 0.426        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF2|int_q|clk                    ;
+; 0.426  ; 0.426        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF3|int_q|clk                    ;
+; 0.443  ; 0.443        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF0|int_q|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~input|i                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~input|i                               ;
+; 0.556  ; 0.556        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF0|int_q|clk                 ;
+; 0.573  ; 0.573        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF1|int_q|clk                 ;
+; 0.573  ; 0.573        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF2|int_q|clk                 ;
+; 0.573  ; 0.573        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF2|int_q|clk                    ;
+; 0.573  ; 0.573        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF3|int_q|clk                    ;
+; 0.574  ; 0.574        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF0|int_q|clk                    ;
+; 0.574  ; 0.574        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF1|int_q|clk                    ;
+; 0.578  ; 0.578        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~inputclkctrl|inclk[0]                 ;
+; 0.578  ; 0.578        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~inputclkctrl|outclk                   ;
+; 0.584  ; 0.584        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~input|o                               ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MSC[*]    ; GClock     ; 3.235 ; 3.413 ; Rise       ; GClock          ;
+;  MSC[0]   ; GClock     ; 2.928 ; 3.054 ; Rise       ; GClock          ;
+;  MSC[1]   ; GClock     ; 2.778 ; 2.985 ; Rise       ; GClock          ;
+;  MSC[2]   ; GClock     ; 3.235 ; 3.413 ; Rise       ; GClock          ;
+;  MSC[3]   ; GClock     ; 3.143 ; 3.410 ; Rise       ; GClock          ;
+; SSC[*]    ; GClock     ; 3.245 ; 3.376 ; Rise       ; GClock          ;
+;  SSC[0]   ; GClock     ; 3.245 ; 3.376 ; Rise       ; GClock          ;
+;  SSC[1]   ; GClock     ; 2.501 ; 2.744 ; Rise       ; GClock          ;
+;  SSC[2]   ; GClock     ; 2.695 ; 2.908 ; Rise       ; GClock          ;
+;  SSC[3]   ; GClock     ; 2.811 ; 3.058 ; Rise       ; GClock          ;
+; SSCS      ; GClock     ; 1.415 ; 1.656 ; Rise       ; GClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSC[*]    ; GClock     ; -1.416 ; -1.558 ; Rise       ; GClock          ;
+;  MSC[0]   ; GClock     ; -1.416 ; -1.558 ; Rise       ; GClock          ;
+;  MSC[1]   ; GClock     ; -1.703 ; -1.928 ; Rise       ; GClock          ;
+;  MSC[2]   ; GClock     ; -2.055 ; -2.250 ; Rise       ; GClock          ;
+;  MSC[3]   ; GClock     ; -1.960 ; -2.200 ; Rise       ; GClock          ;
+; SSC[*]    ; GClock     ; -1.441 ; -1.693 ; Rise       ; GClock          ;
+;  SSC[0]   ; GClock     ; -1.705 ; -1.860 ; Rise       ; GClock          ;
+;  SSC[1]   ; GClock     ; -1.441 ; -1.693 ; Rise       ; GClock          ;
+;  SSC[2]   ; GClock     ; -1.541 ; -1.761 ; Rise       ; GClock          ;
+;  SSC[3]   ; GClock     ; -1.637 ; -1.853 ; Rise       ; GClock          ;
+; SSCS      ; GClock     ; -1.008 ; -1.232 ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSTL[*]   ; GClock     ; 12.371 ; 11.935 ; Rise       ; GClock          ;
+;  MSTL[0]  ; GClock     ; 11.548 ; 11.935 ; Rise       ; GClock          ;
+;  MSTL[1]  ; GClock     ; 12.371 ; 11.919 ; Rise       ; GClock          ;
+;  MSTL[2]  ; GClock     ; 8.591  ; 8.599  ; Rise       ; GClock          ;
+; SSTL[*]   ; GClock     ; 13.834 ; 13.295 ; Rise       ; GClock          ;
+;  SSTL[0]  ; GClock     ; 13.834 ; 13.295 ; Rise       ; GClock          ;
+;  SSTL[1]  ; GClock     ; 12.281 ; 12.479 ; Rise       ; GClock          ;
+;  SSTL[2]  ; GClock     ; 8.171  ; 8.172  ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSTL[*]   ; GClock     ; 8.275  ; 8.281  ; Rise       ; GClock          ;
+;  MSTL[0]  ; GClock     ; 8.454  ; 8.536  ; Rise       ; GClock          ;
+;  MSTL[1]  ; GClock     ; 8.986  ; 8.782  ; Rise       ; GClock          ;
+;  MSTL[2]  ; GClock     ; 8.275  ; 8.281  ; Rise       ; GClock          ;
+; SSTL[*]   ; GClock     ; 7.867  ; 7.870  ; Rise       ; GClock          ;
+;  SSTL[0]  ; GClock     ; 10.361 ; 10.130 ; Rise       ; GClock          ;
+;  SSTL[1]  ; GClock     ; 9.160  ; 9.080  ; Rise       ; GClock          ;
+;  SSTL[2]  ; GClock     ; 7.867  ; 7.870  ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; GClock ; -0.427 ; -1.822           ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; GClock ; 0.182 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; GClock ; -3.000 ; -10.465                        ;
++--------+--------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'GClock'                                                                                                                                       ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.427 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.373      ;
+; -0.425 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.371      ;
+; -0.395 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.255     ; 1.127      ;
+; -0.372 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.164      ; 1.523      ;
+; -0.359 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; -0.050     ; 1.296      ;
+; -0.358 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.304      ;
+; -0.356 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.302      ;
+; -0.349 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.295      ;
+; -0.347 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.293      ;
+; -0.320 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.164      ; 1.471      ;
+; -0.311 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.164      ; 1.462      ;
+; -0.261 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.207      ;
+; -0.259 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.205      ;
+; -0.223 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.164      ; 1.374      ;
+; -0.194 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.255     ; 0.926      ;
+; -0.193 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.255     ; 0.925      ;
+; -0.193 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.139      ;
+; -0.191 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 1.137      ;
+; -0.155 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.164      ; 1.306      ;
+; -0.106 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.255     ; 0.838      ;
+; -0.105 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.255     ; 0.837      ;
+; -0.049 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.995      ;
+; -0.013 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 1.000        ; 0.164      ; 1.164      ;
+; 0.006  ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.940      ;
+; 0.007  ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.939      ;
+; 0.025  ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.255     ; 0.707      ;
+; 0.067  ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.879      ;
+; 0.069  ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.877      ;
+; 0.074  ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.872      ;
+; 0.075  ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.871      ;
+; 0.094  ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.852      ;
+; 0.095  ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.851      ;
+; 0.131  ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.815      ;
+; 0.134  ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.812      ;
+; 0.145  ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.801      ;
+; 0.147  ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.799      ;
+; 0.150  ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.796      ;
+; 0.151  ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.795      ;
+; 0.178  ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.768      ;
+; 0.179  ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.767      ;
+; 0.266  ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.680      ;
+; 0.267  ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.679      ;
+; 0.338  ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.608      ;
+; 0.409  ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.537      ;
+; 0.418  ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.528      ;
+; 0.587  ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.359      ;
+; 0.587  ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.359      ;
+; 0.587  ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.359      ;
+; 0.596  ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 1.000        ; -0.041     ; 0.350      ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'GClock'                                                                                                                                       ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.182 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.189 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.314      ;
+; 0.230 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.255      ; 0.569      ;
+; 0.301 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.255      ; 0.640      ;
+; 0.305 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.430      ;
+; 0.312 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.437      ;
+; 0.366 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.255      ; 0.705      ;
+; 0.380 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.505      ;
+; 0.394 ; FSMController:FSMController|dFF_2:DFF2|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.519      ;
+; 0.458 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.583      ;
+; 0.458 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.583      ;
+; 0.493 ; FSMController:FSMController|dFF_2:DFF1|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.618      ;
+; 0.532 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.657      ;
+; 0.534 ; FSMController:FSMController|dFF_2:DFF1|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.659      ;
+; 0.540 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.665      ;
+; 0.541 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.666      ;
+; 0.544 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.669      ;
+; 0.546 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.671      ;
+; 0.562 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.687      ;
+; 0.567 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.692      ;
+; 0.567 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.692      ;
+; 0.577 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.702      ;
+; 0.602 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.727      ;
+; 0.603 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.728      ;
+; 0.611 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.736      ;
+; 0.612 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.255      ; 0.951      ;
+; 0.613 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.738      ;
+; 0.625 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.255      ; 0.964      ;
+; 0.641 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.766      ;
+; 0.643 ; FSMController:FSMController|dFF_2:DFF2|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.768      ;
+; 0.657 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.255      ; 0.996      ;
+; 0.675 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; -0.164     ; 0.595      ;
+; 0.724 ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.849      ;
+; 0.798 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; GClock       ; GClock      ; 0.000        ; -0.164     ; 0.718      ;
+; 0.798 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ; GClock       ; GClock      ; 0.000        ; -0.164     ; 0.718      ;
+; 0.820 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.945      ;
+; 0.823 ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.948      ;
+; 0.833 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.958      ;
+; 0.836 ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.961      ;
+; 0.865 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.990      ;
+; 0.868 ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; FSMController:FSMController|dFF_2:DFF2|int_q ; GClock       ; GClock      ; 0.000        ; 0.041      ; 0.993      ;
+; 0.872 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ; GClock       ; GClock      ; 0.000        ; -0.164     ; 0.792      ;
+; 0.874 ; FSMController:FSMController|dFF_2:DFF0|int_q ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ; GClock       ; GClock      ; 0.000        ; -0.164     ; 0.794      ;
+; 0.900 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF0|int_q ; GClock       ; GClock      ; 0.000        ; 0.050      ; 1.034      ;
+; 1.012 ; FSMController:FSMController|dFF_2:DFF0|int_q ; FSMController:FSMController|dFF_2:DFF1|int_q ; GClock       ; GClock      ; 0.000        ; -0.164     ; 0.932      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'GClock'                                                                             ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                       ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; GClock ; Rise       ; GClock                                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; -0.089 ; 0.095        ; 0.184          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; -0.063 ; 0.121        ; 0.184          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; 0.091  ; 0.091        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF0|int_q|clk                 ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF1|int_q|clk                 ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; FSMController|DFF2|int_q|clk                 ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF2|int_q|clk                    ;
+; 0.117  ; 0.117        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF3|int_q|clk                    ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF0|int_q|clk                    ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; MSCcounter|DFF1|int_q|clk                    ;
+; 0.120  ; 0.120        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~input|o                               ;
+; 0.133  ; 0.133        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~inputclkctrl|inclk[0]                 ;
+; 0.133  ; 0.133        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~inputclkctrl|outclk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~input|i                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; GClock ; Rise       ; GClock~input|i                               ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF0|int_q       ;
+; 0.660  ; 0.876        ; 0.216          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF1|int_q       ;
+; 0.661  ; 0.877        ; 0.216          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF1|int_q ;
+; 0.661  ; 0.877        ; 0.216          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF2|int_q ;
+; 0.661  ; 0.877        ; 0.216          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF2|int_q       ;
+; 0.661  ; 0.877        ; 0.216          ; High Pulse Width ; GClock ; Rise       ; counter_4b:MSCcounter|dFF_2:DFF3|int_q       ;
+; 0.686  ; 0.902        ; 0.216          ; High Pulse Width ; GClock ; Rise       ; FSMController:FSMController|dFF_2:DFF0|int_q ;
+; 0.866  ; 0.866        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~inputclkctrl|inclk[0]                 ;
+; 0.866  ; 0.866        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~inputclkctrl|outclk                   ;
+; 0.880  ; 0.880        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; GClock~input|o                               ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF0|int_q|clk                    ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF1|int_q|clk                    ;
+; 0.883  ; 0.883        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF1|int_q|clk                 ;
+; 0.883  ; 0.883        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF2|int_q|clk                 ;
+; 0.883  ; 0.883        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF2|int_q|clk                    ;
+; 0.883  ; 0.883        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; MSCcounter|DFF3|int_q|clk                    ;
+; 0.908  ; 0.908        ; 0.000          ; High Pulse Width ; GClock ; Rise       ; FSMController|DFF0|int_q|clk                 ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MSC[*]    ; GClock     ; 1.664 ; 2.262 ; Rise       ; GClock          ;
+;  MSC[0]   ; GClock     ; 1.540 ; 2.024 ; Rise       ; GClock          ;
+;  MSC[1]   ; GClock     ; 1.428 ; 2.014 ; Rise       ; GClock          ;
+;  MSC[2]   ; GClock     ; 1.664 ; 2.262 ; Rise       ; GClock          ;
+;  MSC[3]   ; GClock     ; 1.629 ; 2.245 ; Rise       ; GClock          ;
+; SSC[*]    ; GClock     ; 1.734 ; 2.247 ; Rise       ; GClock          ;
+;  SSC[0]   ; GClock     ; 1.734 ; 2.247 ; Rise       ; GClock          ;
+;  SSC[1]   ; GClock     ; 1.315 ; 1.894 ; Rise       ; GClock          ;
+;  SSC[2]   ; GClock     ; 1.389 ; 1.963 ; Rise       ; GClock          ;
+;  SSC[3]   ; GClock     ; 1.434 ; 2.021 ; Rise       ; GClock          ;
+; SSCS      ; GClock     ; 0.769 ; 1.378 ; Rise       ; GClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSC[*]    ; GClock     ; -0.713 ; -1.245 ; Rise       ; GClock          ;
+;  MSC[0]   ; GClock     ; -0.713 ; -1.245 ; Rise       ; GClock          ;
+;  MSC[1]   ; GClock     ; -0.846 ; -1.462 ; Rise       ; GClock          ;
+;  MSC[2]   ; GClock     ; -1.052 ; -1.656 ; Rise       ; GClock          ;
+;  MSC[3]   ; GClock     ; -1.007 ; -1.604 ; Rise       ; GClock          ;
+; SSC[*]    ; GClock     ; -0.739 ; -1.341 ; Rise       ; GClock          ;
+;  SSC[0]   ; GClock     ; -0.898 ; -1.454 ; Rise       ; GClock          ;
+;  SSC[1]   ; GClock     ; -0.739 ; -1.341 ; Rise       ; GClock          ;
+;  SSC[2]   ; GClock     ; -0.789 ; -1.362 ; Rise       ; GClock          ;
+;  SSC[3]   ; GClock     ; -0.818 ; -1.388 ; Rise       ; GClock          ;
+; SSCS      ; GClock     ; -0.541 ; -1.136 ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MSTL[*]   ; GClock     ; 7.088 ; 7.312 ; Rise       ; GClock          ;
+;  MSTL[0]  ; GClock     ; 7.088 ; 6.669 ; Rise       ; GClock          ;
+;  MSTL[1]  ; GClock     ; 6.879 ; 7.312 ; Rise       ; GClock          ;
+;  MSTL[2]  ; GClock     ; 4.984 ; 5.249 ; Rise       ; GClock          ;
+; SSTL[*]   ; GClock     ; 7.660 ; 8.199 ; Rise       ; GClock          ;
+;  SSTL[0]  ; GClock     ; 7.660 ; 8.199 ; Rise       ; GClock          ;
+;  SSTL[1]  ; GClock     ; 7.395 ; 7.089 ; Rise       ; GClock          ;
+;  SSTL[2]  ; GClock     ; 4.961 ; 4.730 ; Rise       ; GClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MSTL[*]   ; GClock     ; 4.814 ; 4.870 ; Rise       ; GClock          ;
+;  MSTL[0]  ; GClock     ; 5.122 ; 4.870 ; Rise       ; GClock          ;
+;  MSTL[1]  ; GClock     ; 5.311 ; 5.105 ; Rise       ; GClock          ;
+;  MSTL[2]  ; GClock     ; 4.814 ; 5.069 ; Rise       ; GClock          ;
+; SSTL[*]   ; GClock     ; 4.789 ; 4.567 ; Rise       ; GClock          ;
+;  SSTL[0]  ; GClock     ; 5.821 ; 6.191 ; Rise       ; GClock          ;
+;  SSTL[1]  ; GClock     ; 5.197 ; 5.506 ; Rise       ; GClock          ;
+;  SSTL[2]  ; GClock     ; 4.789 ; 4.567 ; Rise       ; GClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.005  ; 0.182 ; N/A      ; N/A     ; -3.000              ;
+;  GClock          ; -2.005  ; 0.182 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -11.219 ; 0.0   ; 0.0      ; 0.0     ; -11.995             ;
+;  GClock          ; -11.219 ; 0.000 ; N/A      ; N/A     ; -11.995             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MSC[*]    ; GClock     ; 3.617 ; 3.925 ; Rise       ; GClock          ;
+;  MSC[0]   ; GClock     ; 3.326 ; 3.524 ; Rise       ; GClock          ;
+;  MSC[1]   ; GClock     ; 3.135 ; 3.460 ; Rise       ; GClock          ;
+;  MSC[2]   ; GClock     ; 3.617 ; 3.925 ; Rise       ; GClock          ;
+;  MSC[3]   ; GClock     ; 3.536 ; 3.916 ; Rise       ; GClock          ;
+; SSC[*]    ; GClock     ; 3.659 ; 3.874 ; Rise       ; GClock          ;
+;  SSC[0]   ; GClock     ; 3.659 ; 3.874 ; Rise       ; GClock          ;
+;  SSC[1]   ; GClock     ; 2.835 ; 3.187 ; Rise       ; GClock          ;
+;  SSC[2]   ; GClock     ; 3.043 ; 3.364 ; Rise       ; GClock          ;
+;  SSC[3]   ; GClock     ; 3.175 ; 3.529 ; Rise       ; GClock          ;
+; SSCS      ; GClock     ; 1.626 ; 1.996 ; Rise       ; GClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSC[*]    ; GClock     ; -0.713 ; -1.245 ; Rise       ; GClock          ;
+;  MSC[0]   ; GClock     ; -0.713 ; -1.245 ; Rise       ; GClock          ;
+;  MSC[1]   ; GClock     ; -0.846 ; -1.462 ; Rise       ; GClock          ;
+;  MSC[2]   ; GClock     ; -1.052 ; -1.656 ; Rise       ; GClock          ;
+;  MSC[3]   ; GClock     ; -1.007 ; -1.604 ; Rise       ; GClock          ;
+; SSC[*]    ; GClock     ; -0.739 ; -1.341 ; Rise       ; GClock          ;
+;  SSC[0]   ; GClock     ; -0.898 ; -1.454 ; Rise       ; GClock          ;
+;  SSC[1]   ; GClock     ; -0.739 ; -1.341 ; Rise       ; GClock          ;
+;  SSC[2]   ; GClock     ; -0.789 ; -1.362 ; Rise       ; GClock          ;
+;  SSC[3]   ; GClock     ; -0.818 ; -1.388 ; Rise       ; GClock          ;
+; SSCS      ; GClock     ; -0.541 ; -1.136 ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MSTL[*]   ; GClock     ; 13.456 ; 13.252 ; Rise       ; GClock          ;
+;  MSTL[0]  ; GClock     ; 12.834 ; 12.990 ; Rise       ; GClock          ;
+;  MSTL[1]  ; GClock     ; 13.456 ; 13.252 ; Rise       ; GClock          ;
+;  MSTL[2]  ; GClock     ; 9.431  ; 9.578  ; Rise       ; GClock          ;
+; SSTL[*]   ; GClock     ; 14.974 ; 14.784 ; Rise       ; GClock          ;
+;  SSTL[0]  ; GClock     ; 14.974 ; 14.784 ; Rise       ; GClock          ;
+;  SSTL[1]  ; GClock     ; 13.608 ; 13.622 ; Rise       ; GClock          ;
+;  SSTL[2]  ; GClock     ; 9.107  ; 8.992  ; Rise       ; GClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MSTL[*]   ; GClock     ; 4.814 ; 4.870 ; Rise       ; GClock          ;
+;  MSTL[0]  ; GClock     ; 5.122 ; 4.870 ; Rise       ; GClock          ;
+;  MSTL[1]  ; GClock     ; 5.311 ; 5.105 ; Rise       ; GClock          ;
+;  MSTL[2]  ; GClock     ; 4.814 ; 5.069 ; Rise       ; GClock          ;
+; SSTL[*]   ; GClock     ; 4.789 ; 4.567 ; Rise       ; GClock          ;
+;  SSTL[0]  ; GClock     ; 5.821 ; 6.191 ; Rise       ; GClock          ;
+;  SSTL[1]  ; GClock     ; 5.197 ; 5.506 ; Rise       ; GClock          ;
+;  SSTL[2]  ; GClock     ; 4.789 ; 4.567 ; Rise       ; GClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; MSTL[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; MSTL[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; MSTL[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SSTL[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SSTL[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SSTL[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; GReset                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SSC[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; MSC[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SSC[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; MSC[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SSC[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; MSC[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; MSC[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SSC[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; GClock                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SSCS                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; MSTL[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; MSTL[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; MSTL[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; SSTL[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; SSTL[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; SSTL[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; MSTL[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; MSTL[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; MSTL[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; SSTL[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; SSTL[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; SSTL[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; MSTL[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; MSTL[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; MSTL[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SSTL[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SSTL[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; SSTL[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; GClock     ; GClock   ; 169      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; GClock     ; GClock   ; 169      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 25    ; 25   ;
+; Unconstrained Output Ports      ; 6     ; 6    ;
+; Unconstrained Output Port Paths ; 10    ; 10   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 06 19:34:13 2024
+Info: Command: quartus_sta lab3junktrunk -c lab3junktrunk
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab3junktrunk.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name GClock GClock
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.005
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.005       -11.219 GClock 
+Info (332146): Worst-case hold slack is 0.402
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.402         0.000 GClock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -11.995 GClock 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.732
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.732        -9.681 GClock 
+Info (332146): Worst-case hold slack is 0.354
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.354         0.000 GClock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -11.995 GClock 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.427
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.427        -1.822 GClock 
+Info (332146): Worst-case hold slack is 0.182
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.182         0.000 GClock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -10.465 GClock 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4726 megabytes
+    Info: Processing ended: Wed Nov 06 19:34:19 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+

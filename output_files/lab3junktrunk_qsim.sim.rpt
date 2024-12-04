@@ -1,0 +1,660 @@
+Simulator report for lab3junktrunk_qsim
+Wed Nov 06 20:54:33 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 200.0 ns     ;
+; Simulation Netlist Size     ; 273 nodes    ;
+; Simulation Coverage         ;      17.65 % ;
+; Total Number of Transitions ; 1217         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                                                               ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                                                             ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                                                                          ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                                                                ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                                                                 ;               ;
+; Vector input source                                                                        ; C:/Users/whamo086/Downloads/Lab3 - Traffic light controller/Lab3 - Traffic light controller/VHDL files/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                                                                  ; On            ;
+; Check outputs                                                                              ; Off                                                                                                                 ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                                                                  ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                                                                  ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                                                                  ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                                                                  ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                                                                 ; Off           ;
+; Detect glitches                                                                            ; Off                                                                                                                 ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                                                                 ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                                                                 ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                                                                 ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                                                                 ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                                                                  ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                                                          ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                                                                 ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                                                                 ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                                                                ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                                                                                           ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                                                                                           ; Transport     ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      17.65 % ;
+; Total nodes checked                                 ; 273          ;
+; Total output ports checked                          ; 272          ;
+; Total output ports with complete 1/0-value coverage ; 48           ;
+; Total output ports with no 1/0-value coverage       ; 224          ;
+; Total output ports with no 1-value coverage         ; 224          ;
+; Total output ports with no 0-value coverage         ; 224          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                          ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; Node Name                                                                       ; Output Port Name                                                                ; Output Port Type ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; |trafficLightController|MSC[0]                                                  ; |trafficLightController|MSC[0]                                                  ; out              ;
+; |trafficLightController|MSC[1]                                                  ; |trafficLightController|MSC[1]                                                  ; out              ;
+; |trafficLightController|MSC[2]                                                  ; |trafficLightController|MSC[2]                                                  ; out              ;
+; |trafficLightController|MSC[3]                                                  ; |trafficLightController|MSC[3]                                                  ; out              ;
+; |trafficLightController|SSC[0]                                                  ; |trafficLightController|SSC[0]                                                  ; out              ;
+; |trafficLightController|SSC[1]                                                  ; |trafficLightController|SSC[1]                                                  ; out              ;
+; |trafficLightController|SSC[2]                                                  ; |trafficLightController|SSC[2]                                                  ; out              ;
+; |trafficLightController|SSC[3]                                                  ; |trafficLightController|SSC[3]                                                  ; out              ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~1                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1[3]               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1[3]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~4                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1[2]               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1[2]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~7                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1[1]               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1[1]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~10               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~10               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1[0]               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1[0]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1~1                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1~4                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1~7                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1[1]               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1[1]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1~10               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1~10               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1[0]               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX2|OUT1[0]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1~1                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1~4                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1[2]               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1[2]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1~7                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1~10               ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX1|OUT1~10               ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|EQ                             ; |trafficLightController|comparator_4b:Comparator|EQ                             ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|GTE                            ; |trafficLightController|comparator_4b:Comparator|GTE                            ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1~0 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1~0 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_LT1~0 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_LT1~0 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_LT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_LT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_LT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_LT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|o_LT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|o_LT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1~0 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1~0 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_LT1~0 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_LT1~0 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_LT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_LT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_LT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_LT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|o_LT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|o_LT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1~0 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1~0 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_LT1~0 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_LT1~0 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_LT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_LT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_LT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_LT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|o_LT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|o_LT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP3|int_LT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP3|int_LT1   ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~1                      ; |trafficLightController|FSMController:FSMController|Y0_i~1                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~3                      ; |trafficLightController|FSMController:FSMController|Y0_i~3                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i                        ; |trafficLightController|FSMController:FSMController|Y0_i                        ; out0             ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                             ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; Node Name                                                                       ; Output Port Name                                                                ; Output Port Type ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; |trafficLightController|SSCS                                                    ; |trafficLightController|SSCS                                                    ; out              ;
+; |trafficLightController|GClock                                                  ; |trafficLightController|GClock                                                  ; out              ;
+; |trafficLightController|MSTL[0]                                                 ; |trafficLightController|MSTL[0]                                                 ; pin_out          ;
+; |trafficLightController|MSTL[1]                                                 ; |trafficLightController|MSTL[1]                                                 ; pin_out          ;
+; |trafficLightController|MSTL[2]                                                 ; |trafficLightController|MSTL[2]                                                 ; pin_out          ;
+; |trafficLightController|SSTL[0]                                                 ; |trafficLightController|SSTL[0]                                                 ; pin_out          ;
+; |trafficLightController|SSTL[1]                                                 ; |trafficLightController|SSTL[1]                                                 ; pin_out          ;
+; |trafficLightController|SSTL[2]                                                 ; |trafficLightController|SSTL[2]                                                 ; pin_out          ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i~0                            ; |trafficLightController|counter_4b:MSCcounter|Y3_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i~1                            ; |trafficLightController|counter_4b:MSCcounter|Y3_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i~2                            ; |trafficLightController|counter_4b:MSCcounter|Y3_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i~3                            ; |trafficLightController|counter_4b:MSCcounter|Y3_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i                              ; |trafficLightController|counter_4b:MSCcounter|Y3_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~0                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~1                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~2                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~3                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~4                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~5                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~6                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~7                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~7                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~8                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~8                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i                              ; |trafficLightController|counter_4b:MSCcounter|Y2_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~0                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~1                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~2                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~3                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~4                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~5                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~6                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i                              ; |trafficLightController|counter_4b:MSCcounter|Y1_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i~0                            ; |trafficLightController|counter_4b:MSCcounter|Y0_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i~1                            ; |trafficLightController|counter_4b:MSCcounter|Y0_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i~2                            ; |trafficLightController|counter_4b:MSCcounter|Y0_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i~3                            ; |trafficLightController|counter_4b:MSCcounter|Y0_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i                              ; |trafficLightController|counter_4b:MSCcounter|Y0_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF0|int_q                  ; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF0|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF1|int_q                  ; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF1|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF2|int_q                  ; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF2|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF3|int_q                  ; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF3|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i~0                            ; |trafficLightController|counter_4b:SSCcounter|Y3_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i~1                            ; |trafficLightController|counter_4b:SSCcounter|Y3_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i~2                            ; |trafficLightController|counter_4b:SSCcounter|Y3_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i~3                            ; |trafficLightController|counter_4b:SSCcounter|Y3_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i                              ; |trafficLightController|counter_4b:SSCcounter|Y3_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~0                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~1                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~2                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~3                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~4                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~5                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~6                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~7                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~7                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~8                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~8                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i                              ; |trafficLightController|counter_4b:SSCcounter|Y2_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~0                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~1                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~2                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~3                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~4                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~5                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~6                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i                              ; |trafficLightController|counter_4b:SSCcounter|Y1_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i~0                            ; |trafficLightController|counter_4b:SSCcounter|Y0_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i~1                            ; |trafficLightController|counter_4b:SSCcounter|Y0_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i~2                            ; |trafficLightController|counter_4b:SSCcounter|Y0_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i~3                            ; |trafficLightController|counter_4b:SSCcounter|Y0_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i                              ; |trafficLightController|counter_4b:SSCcounter|Y0_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF0|int_q                  ; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF0|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF1|int_q                  ; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF1|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF2|int_q                  ; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF2|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF3|int_q                  ; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF3|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i~0                            ; |trafficLightController|counter_4b:SSTcounter|Y3_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i~1                            ; |trafficLightController|counter_4b:SSTcounter|Y3_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i~2                            ; |trafficLightController|counter_4b:SSTcounter|Y3_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i~3                            ; |trafficLightController|counter_4b:SSTcounter|Y3_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i                              ; |trafficLightController|counter_4b:SSTcounter|Y3_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~0                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~1                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~2                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~3                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~4                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~5                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~6                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~7                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~7                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~8                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~8                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i                              ; |trafficLightController|counter_4b:SSTcounter|Y2_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~0                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~1                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~2                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~3                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~4                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~5                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~6                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i                              ; |trafficLightController|counter_4b:SSTcounter|Y1_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i~0                            ; |trafficLightController|counter_4b:SSTcounter|Y0_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i~1                            ; |trafficLightController|counter_4b:SSTcounter|Y0_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i~2                            ; |trafficLightController|counter_4b:SSTcounter|Y0_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i~3                            ; |trafficLightController|counter_4b:SSTcounter|Y0_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i                              ; |trafficLightController|counter_4b:SSTcounter|Y0_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF0|int_q                  ; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF0|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF1|int_q                  ; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF1|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF2|int_q                  ; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF2|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF3|int_q                  ; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF3|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i~0                            ; |trafficLightController|counter_4b:MSTcounter|Y3_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i~1                            ; |trafficLightController|counter_4b:MSTcounter|Y3_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i~2                            ; |trafficLightController|counter_4b:MSTcounter|Y3_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i~3                            ; |trafficLightController|counter_4b:MSTcounter|Y3_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i                              ; |trafficLightController|counter_4b:MSTcounter|Y3_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~0                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~1                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~2                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~3                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~4                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~5                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~6                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~7                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~7                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~8                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~8                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i                              ; |trafficLightController|counter_4b:MSTcounter|Y2_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~0                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~1                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~2                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~3                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~4                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~5                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~6                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i                              ; |trafficLightController|counter_4b:MSTcounter|Y1_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i~0                            ; |trafficLightController|counter_4b:MSTcounter|Y0_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i~1                            ; |trafficLightController|counter_4b:MSTcounter|Y0_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i~2                            ; |trafficLightController|counter_4b:MSTcounter|Y0_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i~3                            ; |trafficLightController|counter_4b:MSTcounter|Y0_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i                              ; |trafficLightController|counter_4b:MSTcounter|Y0_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF0|int_q                  ; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF0|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF1|int_q                  ; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF1|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF2|int_q                  ; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF2|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF3|int_q                  ; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF3|int_q                  ; regout           ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~0                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~0                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~3                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~3                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~6                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~6                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~9                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~9                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~0                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~0                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~1                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[3]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[3]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~3                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~3                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~4                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[2]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[2]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~6                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~6                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~7                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[1]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[1]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~9                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~9                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~10               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~10               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[0]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[0]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~0                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~0                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~1                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[3]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[3]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~3                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~3                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~4                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[2]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[2]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~6                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~6                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~7                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[1]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[1]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~9                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~9                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~10               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~10               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[0]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[0]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~0                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~0                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~1                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[3]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[3]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~3                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~3                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~4                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[2]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[2]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~6                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~6                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~7                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[1]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[1]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~9                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~9                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~10               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~10               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[0]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[0]               ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1~1 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1~1 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|o_GT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|o_GT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1~1 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1~1 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|o_GT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|o_GT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1~1 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1~1 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|o_GT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|o_GT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP3|int_GT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP3|int_GT1   ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~0                      ; |trafficLightController|FSMController:FSMController|Y2_i~0                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~1                      ; |trafficLightController|FSMController:FSMController|Y2_i~1                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~2                      ; |trafficLightController|FSMController:FSMController|Y2_i~2                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~3                      ; |trafficLightController|FSMController:FSMController|Y2_i~3                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~4                      ; |trafficLightController|FSMController:FSMController|Y2_i~4                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i                        ; |trafficLightController|FSMController:FSMController|Y2_i                        ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~0                      ; |trafficLightController|FSMController:FSMController|Y1_i~0                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~1                      ; |trafficLightController|FSMController:FSMController|Y1_i~1                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~2                      ; |trafficLightController|FSMController:FSMController|Y1_i~2                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~3                      ; |trafficLightController|FSMController:FSMController|Y1_i~3                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~4                      ; |trafficLightController|FSMController:FSMController|Y1_i~4                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~5                      ; |trafficLightController|FSMController:FSMController|Y1_i~5                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~6                      ; |trafficLightController|FSMController:FSMController|Y1_i~6                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~7                      ; |trafficLightController|FSMController:FSMController|Y1_i~7                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i                        ; |trafficLightController|FSMController:FSMController|Y1_i                        ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~0                      ; |trafficLightController|FSMController:FSMController|Y0_i~0                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~2                      ; |trafficLightController|FSMController:FSMController|Y0_i~2                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~4                      ; |trafficLightController|FSMController:FSMController|Y0_i~4                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~5                      ; |trafficLightController|FSMController:FSMController|Y0_i~5                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|MSTL[1]                     ; |trafficLightController|FSMController:FSMController|MSTL[1]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|MSTL[0]                     ; |trafficLightController|FSMController:FSMController|MSTL[0]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|SSTL[1]                     ; |trafficLightController|FSMController:FSMController|SSTL[1]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|SSTL[0]                     ; |trafficLightController|FSMController:FSMController|SSTL[0]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|SELC[1]                     ; |trafficLightController|FSMController:FSMController|SELC[1]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC~0                     ; |trafficLightController|FSMController:FSMController|LOADC~0                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC~1                     ; |trafficLightController|FSMController:FSMController|LOADC~1                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC~2                     ; |trafficLightController|FSMController:FSMController|LOADC~2                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC~3                     ; |trafficLightController|FSMController:FSMController|LOADC~3                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC                       ; |trafficLightController|FSMController:FSMController|LOADC                       ; out0             ;
+; |trafficLightController|FSMController:FSMController|ENC~0                       ; |trafficLightController|FSMController:FSMController|ENC~0                       ; out0             ;
+; |trafficLightController|FSMController:FSMController|ENC~1                       ; |trafficLightController|FSMController:FSMController|ENC~1                       ; out0             ;
+; |trafficLightController|FSMController:FSMController|ENC                         ; |trafficLightController|FSMController:FSMController|ENC                         ; out0             ;
+; |trafficLightController|FSMController:FSMController|dFF_2:DFF0|int_q            ; |trafficLightController|FSMController:FSMController|dFF_2:DFF0|int_q            ; regout           ;
+; |trafficLightController|FSMController:FSMController|dFF_2:DFF1|int_q            ; |trafficLightController|FSMController:FSMController|dFF_2:DFF1|int_q            ; regout           ;
+; |trafficLightController|FSMController:FSMController|dFF_2:DFF2|int_q            ; |trafficLightController|FSMController:FSMController|dFF_2:DFF2|int_q            ; regout           ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                             ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; Node Name                                                                       ; Output Port Name                                                                ; Output Port Type ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; |trafficLightController|SSCS                                                    ; |trafficLightController|SSCS                                                    ; out              ;
+; |trafficLightController|GClock                                                  ; |trafficLightController|GClock                                                  ; out              ;
+; |trafficLightController|MSTL[0]                                                 ; |trafficLightController|MSTL[0]                                                 ; pin_out          ;
+; |trafficLightController|MSTL[1]                                                 ; |trafficLightController|MSTL[1]                                                 ; pin_out          ;
+; |trafficLightController|MSTL[2]                                                 ; |trafficLightController|MSTL[2]                                                 ; pin_out          ;
+; |trafficLightController|SSTL[0]                                                 ; |trafficLightController|SSTL[0]                                                 ; pin_out          ;
+; |trafficLightController|SSTL[1]                                                 ; |trafficLightController|SSTL[1]                                                 ; pin_out          ;
+; |trafficLightController|SSTL[2]                                                 ; |trafficLightController|SSTL[2]                                                 ; pin_out          ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i~0                            ; |trafficLightController|counter_4b:MSCcounter|Y3_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i~1                            ; |trafficLightController|counter_4b:MSCcounter|Y3_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i~2                            ; |trafficLightController|counter_4b:MSCcounter|Y3_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i~3                            ; |trafficLightController|counter_4b:MSCcounter|Y3_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y3_i                              ; |trafficLightController|counter_4b:MSCcounter|Y3_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~0                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~1                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~2                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~3                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~4                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~5                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~6                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~7                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~7                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i~8                            ; |trafficLightController|counter_4b:MSCcounter|Y2_i~8                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y2_i                              ; |trafficLightController|counter_4b:MSCcounter|Y2_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~0                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~1                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~2                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~3                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~4                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~5                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i~6                            ; |trafficLightController|counter_4b:MSCcounter|Y1_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y1_i                              ; |trafficLightController|counter_4b:MSCcounter|Y1_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i~0                            ; |trafficLightController|counter_4b:MSCcounter|Y0_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i~1                            ; |trafficLightController|counter_4b:MSCcounter|Y0_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i~2                            ; |trafficLightController|counter_4b:MSCcounter|Y0_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i~3                            ; |trafficLightController|counter_4b:MSCcounter|Y0_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|Y0_i                              ; |trafficLightController|counter_4b:MSCcounter|Y0_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF0|int_q                  ; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF0|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF1|int_q                  ; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF1|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF2|int_q                  ; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF2|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF3|int_q                  ; |trafficLightController|counter_4b:MSCcounter|dFF_2:DFF3|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i~0                            ; |trafficLightController|counter_4b:SSCcounter|Y3_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i~1                            ; |trafficLightController|counter_4b:SSCcounter|Y3_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i~2                            ; |trafficLightController|counter_4b:SSCcounter|Y3_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i~3                            ; |trafficLightController|counter_4b:SSCcounter|Y3_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y3_i                              ; |trafficLightController|counter_4b:SSCcounter|Y3_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~0                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~1                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~2                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~3                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~4                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~5                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~6                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~7                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~7                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i~8                            ; |trafficLightController|counter_4b:SSCcounter|Y2_i~8                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y2_i                              ; |trafficLightController|counter_4b:SSCcounter|Y2_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~0                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~1                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~2                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~3                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~4                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~5                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i~6                            ; |trafficLightController|counter_4b:SSCcounter|Y1_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y1_i                              ; |trafficLightController|counter_4b:SSCcounter|Y1_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i~0                            ; |trafficLightController|counter_4b:SSCcounter|Y0_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i~1                            ; |trafficLightController|counter_4b:SSCcounter|Y0_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i~2                            ; |trafficLightController|counter_4b:SSCcounter|Y0_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i~3                            ; |trafficLightController|counter_4b:SSCcounter|Y0_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|Y0_i                              ; |trafficLightController|counter_4b:SSCcounter|Y0_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF0|int_q                  ; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF0|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF1|int_q                  ; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF1|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF2|int_q                  ; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF2|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF3|int_q                  ; |trafficLightController|counter_4b:SSCcounter|dFF_2:DFF3|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i~0                            ; |trafficLightController|counter_4b:SSTcounter|Y3_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i~1                            ; |trafficLightController|counter_4b:SSTcounter|Y3_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i~2                            ; |trafficLightController|counter_4b:SSTcounter|Y3_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i~3                            ; |trafficLightController|counter_4b:SSTcounter|Y3_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y3_i                              ; |trafficLightController|counter_4b:SSTcounter|Y3_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~0                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~1                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~2                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~3                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~4                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~5                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~6                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~7                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~7                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i~8                            ; |trafficLightController|counter_4b:SSTcounter|Y2_i~8                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y2_i                              ; |trafficLightController|counter_4b:SSTcounter|Y2_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~0                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~1                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~2                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~3                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~4                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~5                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i~6                            ; |trafficLightController|counter_4b:SSTcounter|Y1_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y1_i                              ; |trafficLightController|counter_4b:SSTcounter|Y1_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i~0                            ; |trafficLightController|counter_4b:SSTcounter|Y0_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i~1                            ; |trafficLightController|counter_4b:SSTcounter|Y0_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i~2                            ; |trafficLightController|counter_4b:SSTcounter|Y0_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i~3                            ; |trafficLightController|counter_4b:SSTcounter|Y0_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|Y0_i                              ; |trafficLightController|counter_4b:SSTcounter|Y0_i                              ; out0             ;
+; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF0|int_q                  ; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF0|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF1|int_q                  ; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF1|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF2|int_q                  ; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF2|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF3|int_q                  ; |trafficLightController|counter_4b:SSTcounter|dFF_2:DFF3|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i~0                            ; |trafficLightController|counter_4b:MSTcounter|Y3_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i~1                            ; |trafficLightController|counter_4b:MSTcounter|Y3_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i~2                            ; |trafficLightController|counter_4b:MSTcounter|Y3_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i~3                            ; |trafficLightController|counter_4b:MSTcounter|Y3_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y3_i                              ; |trafficLightController|counter_4b:MSTcounter|Y3_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~0                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~1                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~2                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~3                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~4                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~5                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~6                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~7                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~7                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i~8                            ; |trafficLightController|counter_4b:MSTcounter|Y2_i~8                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y2_i                              ; |trafficLightController|counter_4b:MSTcounter|Y2_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~0                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~1                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~2                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~3                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~4                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~4                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~5                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~5                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i~6                            ; |trafficLightController|counter_4b:MSTcounter|Y1_i~6                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y1_i                              ; |trafficLightController|counter_4b:MSTcounter|Y1_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i~0                            ; |trafficLightController|counter_4b:MSTcounter|Y0_i~0                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i~1                            ; |trafficLightController|counter_4b:MSTcounter|Y0_i~1                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i~2                            ; |trafficLightController|counter_4b:MSTcounter|Y0_i~2                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i~3                            ; |trafficLightController|counter_4b:MSTcounter|Y0_i~3                            ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|Y0_i                              ; |trafficLightController|counter_4b:MSTcounter|Y0_i                              ; out0             ;
+; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF0|int_q                  ; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF0|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF1|int_q                  ; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF1|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF2|int_q                  ; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF2|int_q                  ; regout           ;
+; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF3|int_q                  ; |trafficLightController|counter_4b:MSTcounter|dFF_2:DFF3|int_q                  ; regout           ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~0                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~0                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~3                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~3                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~6                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~6                ; out0             ;
+; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~9                ; |trafficLightController|MUX4to1_4b:maxMUX|MUX2to1_4b:MUX3|OUT1~9                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~0                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~0                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~1                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[3]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[3]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~3                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~3                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~4                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[2]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[2]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~6                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~6                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~7                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[1]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[1]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~9                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~9                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~10               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1~10               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[0]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX3|OUT1[0]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~0                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~0                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~1                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[3]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[3]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~3                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~3                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~4                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[2]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[2]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~6                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~6                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~7                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[1]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[1]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~9                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~9                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~10               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1~10               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[0]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX2|OUT1[0]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~0                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~0                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~1                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~1                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[3]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[3]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~3                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~3                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~4                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~4                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[2]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[2]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~6                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~6                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~7                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~7                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[1]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[1]               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~9                ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~9                ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~10               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1~10               ; out0             ;
+; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[0]               ; |trafficLightController|MUX4to1_4b:cntMUX|MUX2to1_4b:MUX1|OUT1[0]               ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1~1 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1~1 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|int_GT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|o_GT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP0|o_GT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1~1 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1~1 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|int_GT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|o_GT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP1|o_GT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1~1 ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1~1 ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT1   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT2   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|int_GT2   ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|o_GT      ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP2|o_GT      ; out0             ;
+; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP3|int_GT1   ; |trafficLightController|comparator_4b:Comparator|oneBitComparator:CP3|int_GT1   ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~0                      ; |trafficLightController|FSMController:FSMController|Y2_i~0                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~1                      ; |trafficLightController|FSMController:FSMController|Y2_i~1                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~2                      ; |trafficLightController|FSMController:FSMController|Y2_i~2                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~3                      ; |trafficLightController|FSMController:FSMController|Y2_i~3                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i~4                      ; |trafficLightController|FSMController:FSMController|Y2_i~4                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y2_i                        ; |trafficLightController|FSMController:FSMController|Y2_i                        ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~0                      ; |trafficLightController|FSMController:FSMController|Y1_i~0                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~1                      ; |trafficLightController|FSMController:FSMController|Y1_i~1                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~2                      ; |trafficLightController|FSMController:FSMController|Y1_i~2                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~3                      ; |trafficLightController|FSMController:FSMController|Y1_i~3                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~4                      ; |trafficLightController|FSMController:FSMController|Y1_i~4                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~5                      ; |trafficLightController|FSMController:FSMController|Y1_i~5                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~6                      ; |trafficLightController|FSMController:FSMController|Y1_i~6                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i~7                      ; |trafficLightController|FSMController:FSMController|Y1_i~7                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y1_i                        ; |trafficLightController|FSMController:FSMController|Y1_i                        ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~0                      ; |trafficLightController|FSMController:FSMController|Y0_i~0                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~2                      ; |trafficLightController|FSMController:FSMController|Y0_i~2                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~4                      ; |trafficLightController|FSMController:FSMController|Y0_i~4                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|Y0_i~5                      ; |trafficLightController|FSMController:FSMController|Y0_i~5                      ; out0             ;
+; |trafficLightController|FSMController:FSMController|MSTL[1]                     ; |trafficLightController|FSMController:FSMController|MSTL[1]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|MSTL[0]                     ; |trafficLightController|FSMController:FSMController|MSTL[0]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|SSTL[1]                     ; |trafficLightController|FSMController:FSMController|SSTL[1]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|SSTL[0]                     ; |trafficLightController|FSMController:FSMController|SSTL[0]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|SELC[1]                     ; |trafficLightController|FSMController:FSMController|SELC[1]                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC~0                     ; |trafficLightController|FSMController:FSMController|LOADC~0                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC~1                     ; |trafficLightController|FSMController:FSMController|LOADC~1                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC~2                     ; |trafficLightController|FSMController:FSMController|LOADC~2                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC~3                     ; |trafficLightController|FSMController:FSMController|LOADC~3                     ; out0             ;
+; |trafficLightController|FSMController:FSMController|LOADC                       ; |trafficLightController|FSMController:FSMController|LOADC                       ; out0             ;
+; |trafficLightController|FSMController:FSMController|ENC~0                       ; |trafficLightController|FSMController:FSMController|ENC~0                       ; out0             ;
+; |trafficLightController|FSMController:FSMController|ENC~1                       ; |trafficLightController|FSMController:FSMController|ENC~1                       ; out0             ;
+; |trafficLightController|FSMController:FSMController|ENC                         ; |trafficLightController|FSMController:FSMController|ENC                         ; out0             ;
+; |trafficLightController|FSMController:FSMController|dFF_2:DFF0|int_q            ; |trafficLightController|FSMController:FSMController|dFF_2:DFF0|int_q            ; regout           ;
+; |trafficLightController|FSMController:FSMController|dFF_2:DFF1|int_q            ; |trafficLightController|FSMController:FSMController|dFF_2:DFF1|int_q            ; regout           ;
+; |trafficLightController|FSMController:FSMController|dFF_2:DFF2|int_q            ; |trafficLightController|FSMController:FSMController|dFF_2:DFF2|int_q            ; regout           ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 06 20:54:31 2024
+Info: Command: quartus_sim --simulation_results_format=VWF lab3junktrunk -c lab3junktrunk_qsim
+Info (324025): Using vector source file "C:/Users/whamo086/Downloads/Lab3 - Traffic light controller/Lab3 - Traffic light controller/VHDL files/Waveform.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      17.65 %
+Info (328052): Number of transitions in simulation is 1217
+Info (324045): Vector file lab3junktrunk_qsim.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4476 megabytes
+    Info: Processing ended: Wed Nov 06 20:54:33 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
